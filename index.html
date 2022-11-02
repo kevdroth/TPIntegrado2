@@ -458,16 +458,12 @@
               </div>
             </div>
             </div>
-            <div class="row">
-              <button
-              type="submit"
-              class="btn btn w-100"
-              style="background-color: #96c93e; color: white"
-            >
-              Enviar
-            </button>
+            <div class="col mb-3">
+              <p style="background-color: #17a2b9; text-align: left; padding: 10px;">Total a Pagar: $</p>
             </div>
-            
+            <div class="col mb-3 " style="display: flex; padding-top: 2px;">
+              <button type="submit" class="btn btn w-75" style="background-color: #96c93e; color: white; margin-right: 5px;">Borrar</button>
+            <button type="submit" class="btn btn w-75" style="background-color: #96c93e; color: white; margin-left: 5px;" onclick="calculoEntradas">Resumen</button>
           </form>
         </div>
       </div>
@@ -517,5 +513,24 @@
         </div>
       </nav>
     </footer>
+
+    <script>
+      function calculoEntradas() {
+      var totalDescuento;
+      var cantidad;
+      var precio = 200;
+      if (categoria == estudiante){
+        totalDescuento = (80*200)/100;
+        total = (precio - totalDescuento)*cantidad;
+      }else if (categoria == trainee){
+        totalDescuento = (50*200)/100;
+        total = (precio - totalDescuento)*cantidad;
+      }else if (categoria == junior){
+        totalDescuento = (15*200)/100;
+        total = (precio - totalDescuento)*cantidad;
+      }
+      }
+    </script>
+
   </body>
 </html>
